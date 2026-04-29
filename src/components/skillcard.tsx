@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import {
   ArrowBigUp,
-  ArrowRight,
   ArrowUpRight,
   Bookmark,
   Check,
   Copy,
   MessageSquare,
 } from "lucide-react";
+import { usePostHog } from "posthog-js/react";
 import { useState } from "react";
 
 const SkillCard = ({
@@ -20,12 +20,18 @@ const SkillCard = ({
   title,
 }: SkillRecord) => {
   const [copied, setCopied] = useState(false);
+  const posthog = usePostHog();
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(installCommand);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      posthog.capture("install_command_copied", {
+        skill_title: title,
+        skill_category: category,
+        install_command: installCommand,
+      });
     } catch {
       setCopied(false);
     }
@@ -50,19 +56,21 @@ const SkillCard = ({
           <div className="host">registry.sh</div>
         </div>
       </div>
+
       <div className="body">
         <div className="meta">
           <div className="author">
             <img src="/logo512.png" alt="author avatar" className="avatar" />
             <div className="author-copy">
-              <p>Adrian</p>
+              <p>Adrian</p>-{" "}
               <p>
                 {createdAt
-                  ? new Date(createdAt as string).toLocaleDateString()
+                  ? new Date(createdAt).toLocaleDateString()
                   : "Unknown date"}
               </p>
             </div>
           </div>
+
           <p className="category">{category}</p>
         </div>
 
@@ -70,6 +78,7 @@ const SkillCard = ({
           <Link to="/skills" className="title-link">
             <h3>{title}</h3>
           </Link>
+
           <p>{description}</p>
         </div>
 
@@ -100,11 +109,23 @@ const SkillCard = ({
               <span>{authorEmail ? 1 : 0}</span>
             </div>
           </div>
+
           <div className="actions">
-            <Link to="/skills" className="open" title={`Open ${title}`}>
+            <Link
+              to="/skills"
+              className="open"
+              title={`Open ${title}`}
+              onClick={() =>
+                posthog.capture("skill_opened", {
+                  skill_title: title,
+                  skill_category: category,
+                })
+              }
+            >
               <span>Open</span>
               <ArrowUpRight size={14} />
             </Link>
+
             <button
               type="button"
               className="save"
