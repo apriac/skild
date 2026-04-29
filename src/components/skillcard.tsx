@@ -79,6 +79,7 @@ const SkillCard = ({
             <p>{installCommand}</p>
           </div>
           <button
+            type="button"
             className="copy"
             onClick={handleCopy}
             aria-label="Copy install command"
