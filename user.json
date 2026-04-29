@@ -1,0 +1,97 @@
+{
+  "id": "user_3D2DrF5ltSur3vlMblOYnAQ4sKb",
+  "object": "user",
+  "username": null,
+  "first_name": "Alexandre",
+  "last_name": "Priac",
+  "locale": null,
+  "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfbWljcm9zb2Z0L2ltZ18zRDJEckpzSXA4VGpLMG9HMmduVFdOV1JPZHEifQ",
+  "has_image": true,
+  "primary_email_address_id": "idn_3D2DqT7f2Y0FutUb2kDnb2Yrwdl",
+  "primary_phone_number_id": null,
+  "primary_web3_wallet_id": null,
+  "password_enabled": false,
+  "two_factor_enabled": false,
+  "totp_enabled": false,
+  "backup_code_enabled": false,
+  "email_addresses": [
+    {
+      "id": "idn_3D2DqT7f2Y0FutUb2kDnb2Yrwdl",
+      "object": "email_address",
+      "email_address": "apriac@athos.ca",
+      "reserved": false,
+      "verification": {
+        "object": "verification_from_oauth",
+        "status": "verified",
+        "strategy": "from_oauth_microsoft",
+        "attempts": null,
+        "expire_at": null
+      },
+      "linked_to": [
+        {
+          "type": "oauth_microsoft",
+          "id": "idn_3D2DqSpg6HEBkj2fGYviYYZNZGm"
+        }
+      ],
+      "matches_sso_connection": false,
+      "created_at": 1777471461413,
+      "updated_at": 1777471467537
+    }
+  ],
+  "phone_numbers": [],
+  "web3_wallets": [],
+  "passkeys": [],
+  "external_accounts": [
+    {
+      "object": "external_account",
+      "id": "eac_3D2DqTx7rY0Iegpuus3PQ44KPfk",
+      "provider": "oauth_microsoft",
+      "identification_id": "idn_3D2DqSpg6HEBkj2fGYviYYZNZGm",
+      "provider_user_id": "GtP0lx7iyNcnaAh_T2OPIZZDb64R0oGO5eJ9g-Hmvfw",
+      "approved_scopes": "User.Read email offline_access openid profile",
+      "email_address": "apriac@athos.ca",
+      "email_address_verified": true,
+      "first_name": "Alexandre",
+      "last_name": "Priac",
+      "avatar_url": "https://storage.googleapis.com/images.clerk.dev/oauth_microsoft/img_3D2DrJsIp8TjK0oG2gnTWNWROdq",
+      "image_url": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfbWljcm9zb2Z0L2ltZ18zRDJEckpzSXA4VGpLMG9HMmduVFdOV1JPZHEifQ",
+      "username": "apriac@athos.ca",
+      "phone_number": null,
+      "public_metadata": {},
+      "label": null,
+      "created_at": 1777471461397,
+      "updated_at": 1777471468330,
+      "verification": {
+        "object": "verification_oauth",
+        "status": "verified",
+        "strategy": "oauth_microsoft",
+        "attempts": null,
+        "expire_at": 1777472027191
+      }
+    }
+  ],
+  "saml_accounts": [],
+  "enterprise_accounts": [],
+  "password_last_updated_at": null,
+  "public_metadata": {},
+  "private_metadata": {},
+  "unsafe_metadata": {},
+  "external_id": null,
+  "last_sign_in_at": 1777471467557,
+  "banned": false,
+  "locked": false,
+  "lockout_expires_in_seconds": null,
+  "verification_attempts_remaining": 100,
+  "created_at": 1777471467499,
+  "updated_at": 1777471468306,
+  "delete_self_enabled": true,
+  "bypass_client_trust": false,
+  "create_organization_enabled": true,
+  "last_active_at": 1777471467495,
+  "mfa_enabled_at": null,
+  "mfa_disabled_at": null,
+  "legal_accepted_at": null,
+  "requires_password_reset": false,
+  "deprovisioned": false,
+  "profile_image_url": "https://images.clerk.dev/oauth_microsoft/img_3D2DrJsIp8TjK0oG2gnTWNWROdq"
+}
