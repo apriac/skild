@@ -11,6 +11,7 @@ import { PostHogProvider, usePostHog } from "posthog-js/react";
 import { useEffect } from "react";
 import Crosshair from "#/components/crosshair";
 import Navbar from "#/components/navbar";
+import { Toaster } from "#/components/ui/sonner";
 import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 import appCss from "../styles.css?url";
 
@@ -71,6 +72,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				{/** biome-ignore lint/security/noDangerouslySetInnerHtml: false positive */}
 				<script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
 				<HeadContent />
 			</head>
@@ -99,6 +101,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 							<main>
 								<div className="frame">{children}</div>
+								<Toaster richColors />
 							</main>
 						</div>
 
